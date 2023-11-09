@@ -1,0 +1,17 @@
+query GetMe {
+  me {
+    data {
+      id
+    }
+  }
+}
+
+mutation Regularlogin($input: EmailAndPasswordLoginInput!) {
+  emailAndPasswordLogin(input: $input) {
+    data {
+      token
+    }
+    success
+    message
+  }
+}

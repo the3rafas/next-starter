@@ -13,6 +13,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      backgroundColor:{
+       "wezly-primary" :"#4e9cde"
+      },
+      // colors: {
+      //   'wezly-primary-color': '#243c5a',
+      // },
     },
   },
   plugins: [],
