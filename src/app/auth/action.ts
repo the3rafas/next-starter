@@ -5,6 +5,8 @@ import { revalidatePath, revalidateTag } from "next/cache";
 import { executeGraphQL } from "@/libs/graphql";
 import {
   DeviceEnum,
+  RegisterDocument,
+  RegisterMutation,
   RegularloginDocument,
   RegularloginMutation,
 } from "@/gql/graphql";
@@ -18,19 +20,32 @@ const logInAction = async (variables: any) => {
   });
   return { success, data, message };
 };
+const RegisterAction = async (variables: any) => {
+  const {
+    registerAs: { success, data, message },
+  }: RegisterMutation = await executeGraphQL(RegisterDocument, {
+    variables: { input: { ...variables, device: DeviceEnum.Desktop } },
+  });
+
+  return { success, data, message };
+};
 export default async function UserAction(prevState: any, formDate: FormData) {
+  const actionState = /^true$/i.test(formDate.get("isLogin") as string);
   try {
-    const selectedSechema = formDate.get("isLogin")
+    const selectedSechema = actionState
       ? validateLogin(formDate)
       : validateRegister(formDate);
 
-    return formDate.get("isLogin")
+    return actionState
       ? logInAction(selectedSechema)
-      : validateRegister(formDate);
+      : RegisterAction(selectedSechema);
   } catch (error: any) {
-    console.log(error.errors.map((e: any) => e.message).join(","));
+    console.log(error);
+    
     return {
-      message: error.errors.map((e: any) => e.message).join(","),
+      message: error.errors
+        .map((e: any) => e.path?.[0] + " " + e.message)
+        .join(","),
       state: false,
     };
   }

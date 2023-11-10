@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-const inter = Inter({ subsets: ["latin"] });
+import "react-toastify/dist/ReactToastify.css";
+import Authprovider from "@/component/AuthProvider";
+import { Suspense } from "react";
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-200">
         <ToastContainer />
-        <section className="w-full h-full ">{children}</section>
+        <Authprovider>
+          <Suspense fallback={<p>Loading feed...</p>}>
+            <section className="w-full h-full ">{children}</section>
+          </Suspense>
+        </Authprovider>
       </body>
     </html>
   );

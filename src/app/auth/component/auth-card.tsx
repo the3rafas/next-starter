@@ -18,7 +18,7 @@ const initialState = {
   success: null,
 };
 
-function SubmitButton() {
+function SubmitButton({ login }: { login: boolean }) {
   const { pending } = useFormStatus();
   return (
     <button
@@ -27,7 +27,7 @@ function SubmitButton() {
       className="flex w-full justify-center rounded-md bg-cyan-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
     >
       {" "}
-      Sign in
+      {login ? "Sign in" : "Sign up"}
     </button>
   );
 }
@@ -46,8 +46,11 @@ export default function AuthCart() {
   useEffect(() => {
     if (state.success) {
       toast.success(state.message);
-      localStorage.setItem("H-token", state.data?.token as string);
-      redirect(`/`);
+      if (isLogin) {
+        localStorage.setItem("accessToken", state.data?.token as string);
+        redirect(`/`);
+      }
+      setIsLogin(true);
     } else {
       toast.error(state.message);
     }
@@ -120,6 +123,21 @@ export default function AuthCart() {
                 className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
+            <div className="flex flex-col w-9/12 ">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Nationality
+              </label>
+              <input
+                type="text"
+                name="nationality"
+                id="nationality"
+                required
+                className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
           </>
         )}
         <div className="flex flex-col w-9/12 ">
@@ -166,7 +184,7 @@ export default function AuthCart() {
           />
         </div>
         <div className="flex flex-col w-9/12 ">
-          <SubmitButton />
+          <SubmitButton login={isLogin} />
         </div>
       </form>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

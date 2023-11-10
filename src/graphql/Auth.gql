@@ -1,8 +1,7 @@
-query GetMe {
+query CheckMe  {
   me {
-    data {
-      id
-    }
+    success
+    message
   }
 }
 
@@ -11,6 +10,14 @@ mutation Regularlogin($input: EmailAndPasswordLoginInput!) {
     data {
       token
     }
+    success
+    message
+  }
+}
+
+mutation Register($input: RegisterInput!) {
+  registerAs(input: $input) {
+    data
     success
     message
   }

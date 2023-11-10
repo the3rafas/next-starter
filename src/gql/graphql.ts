@@ -581,10 +581,10 @@ export type VerifyUserByEmailInput = {
   verificationCode: Scalars['String']['input'];
 };
 
-export type GetMeQueryVariables = Exact<{ [key: string]: never; }>;
+export type CheckMeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetMeQuery = { __typename?: 'Query', me: { __typename?: 'GqlUserResponse', data?: { __typename?: 'User', id: string } | null } };
+export type CheckMeQuery = { __typename?: 'Query', me: { __typename?: 'GqlUserResponse', success: boolean, message?: string | null } };
 
 export type RegularloginMutationVariables = Exact<{
   input: EmailAndPasswordLoginInput;
@@ -592,6 +592,13 @@ export type RegularloginMutationVariables = Exact<{
 
 
 export type RegularloginMutation = { __typename?: 'Mutation', emailAndPasswordLogin: { __typename?: 'GqlUserResponse', success: boolean, message?: string | null, data?: { __typename?: 'User', token?: string | null } | null } };
+
+export type RegisterMutationVariables = Exact<{
+  input: RegisterInput;
+}>;
+
+
+export type RegisterMutation = { __typename?: 'Mutation', registerAs: { __typename?: 'GqlBooleanResponse', data?: boolean | null, success: boolean, message?: string | null } };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -608,15 +615,14 @@ export class TypedDocumentString<TResult, TVariables>
   }
 }
 
-export const GetMeDocument = new TypedDocumentString(`
-    query GetMe {
+export const CheckMeDocument = new TypedDocumentString(`
+    query CheckMe {
   me {
-    data {
-      id
-    }
+    success
+    message
   }
 }
-    `) as unknown as TypedDocumentString<GetMeQuery, GetMeQueryVariables>;
+    `) as unknown as TypedDocumentString<CheckMeQuery, CheckMeQueryVariables>;
 export const RegularloginDocument = new TypedDocumentString(`
     mutation Regularlogin($input: EmailAndPasswordLoginInput!) {
   emailAndPasswordLogin(input: $input) {
@@ -628,3 +634,12 @@ export const RegularloginDocument = new TypedDocumentString(`
   }
 }
     `) as unknown as TypedDocumentString<RegularloginMutation, RegularloginMutationVariables>;
+export const RegisterDocument = new TypedDocumentString(`
+    mutation Register($input: RegisterInput!) {
+  registerAs(input: $input) {
+    data
+    success
+    message
+  }
+}
+    `) as unknown as TypedDocumentString<RegisterMutation, RegisterMutationVariables>;
