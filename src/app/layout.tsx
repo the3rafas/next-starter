@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Authprovider from "@/component/AuthProvider";
 import { Suspense } from "react";
+import Loading from "@/component/ui/loading";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,10 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-200">
+      <body className="bg-slate-50">
         <ToastContainer />
         <Authprovider>
-          <Suspense fallback={<p>Loading feed...</p>}>
+          <Suspense fallback={<Loading />}>
             <section className="w-full h-full ">{children}</section>
           </Suspense>
         </Authprovider>

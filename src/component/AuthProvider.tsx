@@ -1,30 +1,20 @@
+"use client";
 import { CheckMeDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/libs/graphql";
-import { redirect, useRouter } from "next/navigation";
-export default async function Authprovider({
+import CheckMe from "./checkMe";
+import { useEffect, useState } from "react";
+export default function Authprovider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  try {
-    const router = useRouter();
-    const {
-      me: { success, message },
-    } = await executeGraphQL(CheckMeDocument, {
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHbS1ZekVWTkNpQ3JITDg3Q2RuODMiLCJpYXQiOjE2OTk2NTkyNzQsImV4cCI6MTY5OTY1OTU3NH0.DgDmMRo75U5jOateTiVyO9XW8dHaRcI6qssnU4VdBdI",
-      },
-      revalidate: 300,
+  const [isAuth, setIsAuth] = useState<boolean>(false);
+  useEffect(() => {
+    executeGraphQL(CheckMeDocument, {
+      revalidate: 0,
+    }).then(({ me: { success, message } }) => {
+      setIsAuth(success);
     });
-
-    console.log(">>", success, message);
-    if (!success) {
-      router.push("/auth");
-    }
-  } catch (error: any) {
-    // Handle error if needed
-  }
-
-  return <>{children}</>;
+  }, []);
+  return <CheckMe success={isAuth}> {children}</CheckMe>;
 }

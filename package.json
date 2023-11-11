@@ -12,6 +12,8 @@
     "prebuild": "pnpm run generate"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@next/env": "^14.0.1",
     "@react-icons/all-files": "^4.1.0",
     "install": "^0.13.0",
