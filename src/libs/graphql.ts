@@ -13,7 +13,7 @@ type GraphQLRespone<T> = { data: T } | GraphQLErrorResponse;
 
 export const ProductsPerPage = 12;
 
-export async function executeGraphQL<Result, Variables>(
+export async function executeGraphQL  <Result, Variables>(
   operation: TypedDocumentString<Result, Variables>,
   options: {
     headers?: HeadersInit;

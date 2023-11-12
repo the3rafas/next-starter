@@ -1,25 +1,24 @@
 "use client";
 import { redirect, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Authprovider from "./AuthProvider";
 
-export default function TokenUi({
+export default function TokenProvider({
   children,
-  getToken,
 }: {
   children: React.ReactNode;
-  getToken: (token: string | undefined) => void;
 }) {
-  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("H-token") as string;
-    console.log(token);
-    getToken(token);
-    // Example of redirect based on token
-    // if (!token) {
-    //   router.push('/login'); // Redirect to login if no token
-    // }
-  }, [router]);
+    setIsClient(true);
+  }, []);
 
-  return <>{children}</>;
+  if (!isClient) {
+    return null; // Or a placeholder/loading state
+  }
+
+  // Now it's safe to use browser-specific objects
+
+  return <Authprovider token={localStorage.getItem("accessToken")}>{children}</Authprovider>;
 }

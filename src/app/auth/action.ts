@@ -16,7 +16,7 @@ const logInAction = async (variables: any) => {
   const {
     emailAndPasswordLogin: { success, data, message },
   }: RegularloginMutation = await executeGraphQL(RegularloginDocument, {
-    variables: { input: { ...variables, device: DeviceEnum.Desktop } },
+    variables: { input: { ...variables, device: DeviceEnum.Desktop } },cache:"no-cache"
   });
   return { success, data, message };
 };
@@ -25,6 +25,7 @@ const RegisterAction = async (variables: any) => {
     registerAs: { success, data, message },
   }: RegisterMutation = await executeGraphQL(RegisterDocument, {
     variables: { input: { ...variables, device: DeviceEnum.Desktop } },
+    cache:"no-cache"
   });
 
   return { success, data, message };

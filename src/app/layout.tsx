@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Authprovider from "@/component/AuthProvider";
 import { Suspense } from "react";
 import Loading from "@/component/ui/loading";
+import TokenProvider from "@/component/token-ui";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-slate-50">
         <ToastContainer />
-        <Authprovider>
+        <TokenProvider>
           <Suspense fallback={<Loading />}>
             <section className="w-full h-full ">{children}</section>
           </Suspense>
-        </Authprovider>
+        </TokenProvider>
       </body>
     </html>
   );

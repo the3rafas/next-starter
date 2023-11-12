@@ -1,5 +1,4 @@
 "use client";
-
 import { useFormState, useFormStatus } from "react-dom";
 import UserAction from "../action";
 import { useEffect, useState } from "react";
@@ -42,8 +41,12 @@ export default function AuthCart() {
   function handleToggleClick() {
     setIsLogin(!isLogin);
   }
+  if (localStorage.getItem("accessToken")) {
+    redirect(`/`);
 
+  }
   useEffect(() => {
+  
     if (state.success) {
       toast.success(state.message);
       if (isLogin) {

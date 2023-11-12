@@ -1,19 +1,22 @@
 "use client";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 export default function CheckMe({
   success,
   children,
 }: {
-  success: boolean;
+  success: boolean | undefined;
   children: React.ReactNode;
 }) {
   const router = useRouter();
   console.log(success);
 
-  if (!success) {
+  if (success === false) {
+    console.log("dsdsd", success);
     router.push("/auth");
-  } else {
+    localStorage.clear();
+  } else if (success === true) {
     router.push("/");
   }
 
