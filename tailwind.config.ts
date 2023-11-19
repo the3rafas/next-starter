@@ -10,12 +10,22 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "918px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
-      // backgroundImage: {
-      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      //   "gradient-conic":
-      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      // },
+      backgroundImage: {
+        // "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        // "gradient-conic":
+        //   "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "custom-wezly-primary":
+          "linear-gradient(90deg, rgba(0,108,111,1) 60%, rgba(0,132,136,1) 74%)",
+        "wezly-button": "linear-gradient(65deg,#004242,#009297);",
+      },
       backgroundColor: {
         "wezly-primary": "#4e9cde",
       },
