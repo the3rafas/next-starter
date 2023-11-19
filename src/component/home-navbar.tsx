@@ -28,7 +28,7 @@ export default function HomeNavBar() {
         className="flex bg-custom-wezly-primary text-white justify-center  w-fulllg:px-8"
         aria-label="Global"
       >
-        <div className="lg:container md:w-4/5 sm:w-10/12 flex justify-between items-center bg-inherit">
+        <div className="lg:container md:w-4/5 sm:w-10/12 flex justify-between items-center ">
           <div className="lg:w-1/5 md:w-2/12 bg-inherit">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>

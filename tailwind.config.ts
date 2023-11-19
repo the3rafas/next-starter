@@ -27,11 +27,11 @@ const config: Config = {
         "wezly-button": "linear-gradient(65deg,#004242,#009297);",
       },
       backgroundColor: {
-        "wezly-primary": "#4e9cde",
+        "custom-wezly-primary": "#4e9cde",
       },
-      // colors: {
-      //   'wezly-primary-color': '#243c5a',
-      // },
+      colors: {
+        "custom-wezly-primary": "rgb(0 108 111)",
+      },
     },
   },
   plugins: [],
