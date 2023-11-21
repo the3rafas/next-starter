@@ -12,13 +12,13 @@ export default function CheckMe({
   const router = useRouter();
   console.log(success);
 
-  if (success === false) {
-    console.log("dsdsd", success);
-    router.push("/auth");
-    localStorage.clear();
-  } else if (success === true) {
-    router.push("/");
-  }
+  // if (success === false) {
+  //   console.log("dsdsd", success);
+  //   router.push("/auth");
+  //   localStorage.clear();
+  // } else if (success === true) {
+  //   router.push("/");
+  // }
 
   return <>{children}</>;
 }

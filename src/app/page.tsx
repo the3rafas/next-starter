@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <HomeNavBar />
-      <section className="container m-auto mt-9">
+      <section className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  mt-9">
         <h1 className="text-2xl font-bold text-gray-700 py-5">Overview</h1>
         <SearchInput />
       </section>
