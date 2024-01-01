@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 0, 99, 104, 1;
+    --color-danger: 255, 73, 54, 1;
+    --color-success: 0, 168, 104, 1;
+    /* ... */
+  }
+}
+
 .custom-scrollbar {
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: currentColor transparent; /* For Firefox */

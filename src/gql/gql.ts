@@ -14,13 +14,13 @@ import * as types from './graphql';
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "query CheckMe {\n  me {\n    success\n    message\n  }\n}\n\nmutation Regularlogin($input: EmailAndPasswordLoginInput!) {\n  emailAndPasswordLogin(input: $input) {\n    data {\n      token\n    }\n    success\n    message\n  }\n}\n\nmutation Register($input: RegisterInput!) {\n  registerAs(input: $input) {\n    data\n    success\n    message\n  }\n}": types.CheckMeDocument,
+    "query CheckMe {\n  me {\n    id\n    identifier\n    channels {\n      id\n    }\n  }\n}": types.CheckMeDocument,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query CheckMe {\n  me {\n    success\n    message\n  }\n}\n\nmutation Regularlogin($input: EmailAndPasswordLoginInput!) {\n  emailAndPasswordLogin(input: $input) {\n    data {\n      token\n    }\n    success\n    message\n  }\n}\n\nmutation Register($input: RegisterInput!) {\n  registerAs(input: $input) {\n    data\n    success\n    message\n  }\n}"): typeof import('./graphql').CheckMeDocument;
+export function graphql(source: "query CheckMe {\n  me {\n    id\n    identifier\n    channels {\n      id\n    }\n  }\n}"): typeof import('./graphql').CheckMeDocument;
 
 
 export function graphql(source: string) {

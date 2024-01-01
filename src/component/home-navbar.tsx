@@ -1,246 +1,128 @@
-"use client";
-import { Fragment } from "react";
-import { GiPlagueDoctorProfile } from "react-icons/gi";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import {
-  Bars3Icon,
-  PlusIcon,
-  XMarkIcon,
-  KeyIcon,
-  CloudIcon,
-  FolderIcon,
-} from "@heroicons/react/24/outline";
-import Link from "next/link";
-import {
-  ChevronDownIcon,
-  DevicePhoneMobileIcon,
-  HomeIcon,
-} from "@heroicons/react/20/solid";
-import { IoSettingsOutline } from "react-icons/io5";
-import { CiLogout } from "react-icons/ci";
-import { CgProfile } from "react-icons/cg";
+'use client';
+import { Fragment } from 'react';
+import { GiPlagueDoctorProfile } from 'react-icons/gi';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Bars3Icon, PlusIcon, XMarkIcon, KeyIcon, CloudIcon, FolderIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import { ChevronDownIcon, DevicePhoneMobileIcon, HomeIcon } from '@heroicons/react/20/solid';
+import { IoSettingsOutline } from 'react-icons/io5';
+import { CiLogout } from 'react-icons/ci';
+import { CgProfile } from 'react-icons/cg';
 
 const navigation = [
-  { name: "Dashboard", href: "/", current: true },
-  { name: "Tutorials", href: "/tutorial", current: false },
-  { name: "Global integration ", href: "/global-integration", current: false },
-  { name: "Help", href: "/help", current: false },
+  { name: 'Dashboard', href: '/', current: true },
+  { name: 'Tutorials', href: '/tutorial', current: false },
+  { name: 'Global integration ', href: '/global-integration', current: false },
+  { name: 'Help', href: '/help', current: false },
 ];
 const profileItems = [
   {
-    lable: "Your Profile",
-    href: "",
-    icon: <CgProfile className="h-5 w-5 " aria-hidden="true" />,
+    lable: 'Your Profile',
+    href: '',
+    icon: <CgProfile className='h-5 w-5 ' aria-hidden='true' />,
   },
   {
-    lable: "Settings",
-    href: "",
-    icon: <IoSettingsOutline className="h-5 w-5" aria-hidden="true" />,
+    lable: 'Settings',
+    href: '',
+    icon: <IoSettingsOutline className='h-5 w-5' aria-hidden='true' />,
   },
   {
-    lable: "Sign out",
-    href: "",
-    icon: <CiLogout className="h-5 w-5" aria-hidden="true" />,
+    lable: 'Sign out',
+    href: '',
+    icon: <CiLogout className='h-5 w-5' aria-hidden='true' />,
   },
 ];
 
 const projectItems = [
   {
-    lable: "Static site",
-    icon: <FolderIcon className="h-5 w-5" aria-hidden="true" />,
-    href: "",
+    lable: 'Static site',
+    icon: <FolderIcon className='h-5 w-5' aria-hidden='true' />,
+    href: '',
   },
   {
-    lable: "Web service",
-    href: "",
-    icon: <CloudIcon className="h-5 w-5" aria-hidden="true" />,
+    lable: 'Web service',
+    href: '',
+    icon: <CloudIcon className='h-5 w-5' aria-hidden='true' />,
   },
   {
-    lable: "Native service",
-    href: "",
-    icon: <DevicePhoneMobileIcon className="h-5 w-5" aria-hidden="true" />,
+    lable: 'Native service',
+    href: '',
+    icon: <DevicePhoneMobileIcon className='h-5 w-5' aria-hidden='true' />,
   },
   {
-    lable: "Maniaka nashfaa",
-    href: "",
-    icon: <KeyIcon className="h-5 w-5" aria-hidden="true" />,
+    lable: 'Maniaka nashfaa',
+    href: '',
+    icon: <KeyIcon className='h-5 w-5' aria-hidden='true' />,
   },
 ];
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function HomeNavBar() {
   return (
-    <Disclosure as="nav" className="bg-custom-wezly-primary">
+    <Disclosure as='nav' className='bg-bg-primary'>
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-salte-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+          <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
+            <div className='relative flex h-16 items-center justify-between'>
+              <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+                <div className='flex flex-shrink-0 items-center'>
                   <svg
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1405.98 312.6"
-                    className="h-8 w-auto text-white"
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='123'
+                    height='34'
+                    className='h-8 w-auto text-white'
+                    viewBox='0 0 123 34'
+                    fill='none'
                   >
                     <path
-                      className="cls-1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      d="M291.05 288.79a679.58 679.58 0 0 1-41.51-54.45c-12 16.51-25.89 34.81-42 54.45-25 29.46-69.18 33.48-101.32 1.34C65.19 250.85-20.51 92.84 4.49 30.8c19.64-50 89.72-19.64 130.78 14.28C163.84 16.52 203.12 0 247.75 0c43.3 0 83 15.62 113.38 44.64 39.28-32.14 111.59-65.17 133-13.84 25 62-60.7 220.05-101.77 259.33-32.13 32.14-76.31 28.12-101.31-1.34zm-23.21-82.13c15.62 23.21 33.92 46.42 46.87 62.49 13.83 16.07 37 17.41 56.24-.89 20.53-19.19 49.1-66.51 69.18-112.93 23.21-52.22 32.59-94.63 25.44-112.93-1.78-4.91-4.9-7.58-13.39-7.58-11.6 0-46 11.6-71 33 13.84 18.3 21 38.83 21 61.15 0 55.35-86.59 57.13-86.59 0 0-22.77 10.27-43.75 24.1-62-25-23.21-56.24-36.15-91.95-36.15S179.46 44.19 156.7 67c14.73 18.3 25 38.39 25 62.05 0 57.13-84.81 62.49-84.81 0 0-30.8 14.73-51.33 19.64-59.81C96.44 54 42.88 19.19 33.06 42.4c-7.15 18.3 2.23 60.71 25.44 112.93 20.08 46.42 48.65 93.74 69.18 112.93 19.2 18.3 42.41 17 56.24.89a720.45 720.45 0 0 0 47.32-62.49c-18.3-29.9-27.68-53.11-27.68-70.08 0-62.49 91.51-63.82 91.51 0 0 16.97-8.93 40.18-27.23 70.08zm-18.3-87c-7.14 0-15.18 4.47-15.18 17 0 5.36 2.23 17.41 15.18 40.62 12.5-23.21 14.73-34.81 14.73-40.62 0-15.66-11.16-17.04-14.73-17.04zM138 92.84c-4.91 8.48-10.27 20.53-10.27 36.16 0 5.35 1.34 9.37 3.57 11.6 4.91 5.8 19.64 1.79 19.64-11.6-.05-14.29-6.3-25.89-12.94-36.16zm221.79-1.34Q346.4 112.26 346.4 129c0 4 .89 6.69 3.12 8.92 6.25 4.91 21.87 3.57 21.87-8.92 0-12.95-4.01-25.45-11.6-37.5z M929.21 172.44h-59.82a69.4 69.4 0 0 0 4.2 24.53q4.1 10.62 10.87 16a23.46 23.46 0 0 0 14.95 5.39 28.27 28.27 0 0 0 10-1.72 29.66 29.66 0 0 0 8.79-5.39 72.63 72.63 0 0 0 7.84-7.85q3.58-4.18 9.3-11.37a8.47 8.47 0 0 1 6.72-2.69 9.51 9.51 0 0 1 7.62 3.44q2.91 3.45 2.91 9.72 0 5.53-3.25 12.94a49 49 0 0 1-9.8 14.21 52.7 52.7 0 0 1-16.46 11.29 54.8 54.8 0 0 1-22.8 4.49q-29.46 0-45.82-22.44t-16.35-60.87a132.81 132.81 0 0 1 4-33.57A82.2 82.2 0 0 1 853.93 102a52.16 52.16 0 0 1 44.14-22.88q17.92 0 30.75 10.09a61.53 61.53 0 0 1 19.18 26.1 87.23 87.23 0 0 1 6.39 32.6q0 15.41-6.61 20t-18.57 4.53zm-59.82-23.18h55.45q-1.12-20.94-8.46-31.33t-19.32-10.4q-11.43 0-18.76 10.55t-8.91 31.18zM1113.88 124.68l-56 87.52h59.93q7.29 0 11 4.78t3.7 12.29q0 7.2-3.64 11.74t-11 4.54h-82.9q-8.73 0-13.05-5.32t-4.31-14.56a22.88 22.88 0 0 1 3-11q3-5.56 12.54-20.44 10.08-15.65 18.32-28.34t15.29-23.72q7-11 11.71-18.71t7.44-13.15h-45.48q-9.41 0-14.22-2.35t-4.82-12.37q0-7.35 3.64-11.74t10.36-4.38h70.24q9.75 0 15 4t5.21 14.32a27 27 0 0 1-1 7.13 31.34 31.34 0 0 1-2.24 6c-.83 1.56-2 3.47-3.36 5.71s-3.24 4.91-5.36 8.05zM1196.33 228.06v-131q0-9.06 4.09-13.72a14 14 0 0 1 11-4.64 14.56 14.56 0 0 1 11.2 4.59q4.26 4.59 4.26 13.77v131q0 9.18-4.31 13.77a14.62 14.62 0 0 1-11.15 4.6 13.89 13.89 0 0 1-10.92-4.76q-4.17-4.75-4.17-13.61zM1332.37 204.53l2.79-6.72-37.47-93.26q-3.46-8-3.46-11.68a13.56 13.56 0 0 1 2-7.17 14.93 14.93 0 0 1 5.52-5.29 14.69 14.69 0 0 1 7.31-2q6.57 0 9.92 4.13t5.91 11.85l25.77 74.07 24.42-68.89a118.28 118.28 0 0 1 5.24-13.12c1.56-3.16 3.22-5.29 5-6.39s4.22-1.65 7.42-1.65a13.19 13.19 0 0 1 6.64 1.81 12.77 12.77 0 0 1 4.9 4.91 13.05 13.05 0 0 1 1.73 6.5c-.3 1.4-.78 3.38-1.45 6s-1.48 5.18-2.45 7.82l-39.7 102.74q-5.14 13.56-10 21.27a32.89 32.89 0 0 1-13 11.85q-8.08 4.14-21.8 4.14-13.38 0-20.07-2.87t-6.7-10.47q0-5.19 3.18-8t9.43-2.81a17.58 17.58 0 0 1 4.79.66 23.17 23.17 0 0 0 5 .66 18.23 18.23 0 0 0 8.25-1.55 14.39 14.39 0 0 0 5.41-5.34 81.84 81.84 0 0 0 5.47-11.2zM697.37 217.51L670.82 120l-26.89 97.55q-3.13 11.1-5 15.93a21.17 21.17 0 0 1-6.44 8.66q-4.59 3.83-12.21 3.83a20.19 20.19 0 0 1-10.14-2.28 17.45 17.45 0 0 1-6.44-6.44 39.63 39.63 0 0 1-4-9.87q-1.58-5.72-2.81-10.6L569.55 107.2q-2.46-9.56-2.46-14.54A14.24 14.24 0 0 1 571.57 82a15.35 15.35 0 0 1 11.09-4.33q9.08 0 12.21 5.77t5.49 16.76l21.51 95L646 106.31a141 141 0 0 1 4.82-15.54 22.45 22.45 0 0 1 6.94-9.21q4.81-3.89 13.11-3.89t13 4a22.16 22.16 0 0 1 6.44 8.83q1.8 4.77 4.82 15.76l24.31 88.9 21.51-95a112.68 112.68 0 0 1 3-11.65 18.75 18.75 0 0 1 4.78-7.51q3.42-3.33 9.92-3.33a15.49 15.49 0 0 1 11 4.28 14.08 14.08 0 0 1 4.54 10.71q0 4.55-2.47 14.54l-27.3 109.54q-2.8 11.1-4.65 16.26a21.61 21.61 0 0 1-6.27 9q-4.43 3.89-12.49 3.89-7.62 0-12.21-3.78a20.26 20.26 0 0 1-6.39-8.49q-1.8-4.62-5.04-16.11z"
-                    ></path>
+                      d='M47.9545 7.72461C46.2057 7.72461 44.7367 8.07392 43.5477 8.77485C42.3563 9.47577 41.4565 10.4774 40.8458 11.7798C40.235 13.0845 39.9297 14.646 39.9297 16.4689C39.9297 18.2617 40.2374 19.8093 40.8573 21.114C41.475 22.4163 42.3795 23.4157 43.5685 24.1097C44.7575 24.8037 46.2195 25.1483 47.9522 25.1483C48.5861 25.1483 49.1921 25.1021 49.7705 25.0119C50.3511 24.9216 50.8855 24.7967 51.3759 24.6394C51.8663 24.4821 52.2989 24.297 52.676 24.0865V21.8704C52.2688 22.0971 51.8062 22.2822 51.2857 22.4233C50.7652 22.5667 50.2493 22.6754 49.7381 22.7518C49.2245 22.8281 48.7503 22.8651 48.3131 22.8651C46.4301 22.8651 44.9981 22.3076 44.0196 21.1926C43.0411 20.0776 42.5507 18.4722 42.5507 16.3786C42.5507 15.0531 42.7496 13.908 43.1498 12.9434C43.5477 11.9788 44.1677 11.2454 45.0028 10.7388C45.8402 10.2345 46.8904 9.98239 48.1558 9.98239C48.7272 9.98239 49.3009 10.031 49.8746 10.1304C50.4459 10.2276 50.978 10.3756 51.4684 10.5723C51.9588 10.7689 52.3614 11.0164 52.6783 11.3172L52.7916 8.92059C52.2781 8.57359 51.6003 8.28674 50.7582 8.06236C49.9139 7.83797 48.9793 7.72461 47.9545 7.72461Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M65.9111 23.0833C65.7376 22.8959 65.652 22.5605 65.652 22.077V13.4207H63.7528L63.6186 13.7492C63.3272 13.6312 63.0218 13.5317 62.7026 13.4554C61.9878 13.2819 61.2683 13.1963 60.5443 13.1963C58.6913 13.1963 57.2895 13.7191 56.341 14.767C55.3925 15.8149 54.916 17.3695 54.916 19.4352C54.916 21.3044 55.2884 22.7132 56.0356 23.6616C56.7805 24.6101 57.8238 25.0866 59.1655 25.0866C59.7994 25.0866 60.3708 24.9964 60.8843 24.816C61.3956 24.6355 61.8605 24.3834 62.2746 24.0595C62.5823 23.8189 62.8761 23.5552 63.1514 23.273C63.1814 23.7912 63.3711 24.2168 63.7204 24.5453C64.1044 24.9062 64.6735 25.0866 65.4276 25.0866C65.7584 25.0866 66.1008 25.0612 66.4571 25.008C66.811 24.9548 67.0932 24.883 67.3037 24.7928V23.3008C67.1233 23.347 66.9429 23.3678 66.7624 23.3678C66.3668 23.3655 66.0846 23.2707 65.9111 23.0833ZM63.1444 21.5473C62.9293 21.7323 62.7188 21.8989 62.5106 22.0423C62.0433 22.3662 61.6038 22.6044 61.1874 22.7548C60.7733 22.9052 60.3777 22.9815 60.0006 22.9815C59.5634 22.9815 59.154 22.8797 58.77 22.6762C58.386 22.4726 58.076 22.0955 57.8423 21.5473C57.6087 20.9967 57.493 20.2102 57.493 19.1854C57.493 18.237 57.6179 17.4574 57.8655 16.8467C58.113 16.236 58.4901 15.7849 58.9943 15.4911C59.4986 15.1973 60.158 15.0492 60.9722 15.0492C61.65 15.0492 62.2607 15.1395 62.802 15.3199C62.9177 15.3592 63.0288 15.4009 63.1421 15.4425V21.5473H63.1444Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M74.8735 23.0134C74.6029 23.0666 74.2559 23.1013 73.8349 23.1152C73.2774 23.1152 72.8934 22.9833 72.6828 22.7196C72.4723 22.4559 72.3659 21.9932 72.3659 21.3293V15.4813H75.5536V13.4178H72.3659V10.7969H69.8583V13.4178H68.3223V15.4813H69.8583V21.5768C69.8583 22.7381 70.092 23.6079 70.5592 24.1862C71.0265 24.7669 71.8177 25.063 72.9327 25.0792C73.5503 25.093 74.1125 25.0491 74.6168 24.9427C75.1211 24.8363 75.4565 24.746 75.623 24.672L75.556 22.8422C75.3709 22.9047 75.1465 22.9625 74.8735 23.0134Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M83.5516 22.9815C82.3903 22.9815 81.4719 22.6738 80.7941 22.0539C80.1164 21.4362 79.7763 20.4415 79.7763 19.0697C79.7763 17.8182 80.0655 16.8767 80.6461 16.2452C81.2267 15.6114 82.0965 15.2968 83.2555 15.2968C83.813 15.2968 84.389 15.3638 84.9835 15.5003C85.578 15.6368 86.0407 15.8172 86.3738 16.0416L86.464 14.0083C86.1934 13.8278 85.7585 13.6474 85.164 13.4669C84.5694 13.2865 83.8708 13.1963 83.0727 13.1963C81.7171 13.1963 80.6021 13.4415 79.7277 13.9319C78.8533 14.4223 78.2102 15.1117 77.7961 16C77.382 16.8883 77.1738 17.92 77.1738 19.0975C77.1738 20.2264 77.3797 21.2442 77.7961 22.1487C78.2102 23.0532 78.851 23.768 79.7161 24.2955C80.5813 24.8229 81.6871 25.0866 83.0265 25.0866C83.7505 25.0866 84.4237 24.9987 85.0483 24.8275C85.6729 24.654 86.1888 24.4181 86.5959 24.115V22.1256C86.1448 22.4425 85.6498 22.6646 85.1154 22.7918C84.588 22.9167 84.0628 22.9815 83.5516 22.9815Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M97.7217 13.3114C97.1341 13.0176 96.4795 12.8695 95.7554 12.8695C94.9573 12.8695 94.2518 13.013 93.6411 13.2998C93.0303 13.5866 92.5029 13.9475 92.0587 14.3847C91.9431 14.4981 91.8344 14.6114 91.7303 14.7248V8.01855H89.2227V24.857H91.7303V17.5678C91.8829 17.4267 93.4236 15.4049 94.9388 15.2962C95.6606 15.2453 96.2088 15.4951 96.5766 15.8953C96.9468 16.2955 97.1295 16.9386 97.1295 17.8269V24.857H99.6394V17.2555C99.6394 16.2007 99.4659 15.354 99.1189 14.7132C98.7766 14.0724 98.3093 13.6052 97.7217 13.3114Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M110.166 13.7139C109.479 13.3669 108.685 13.1934 107.781 13.1934C106.71 13.1934 105.768 13.4316 104.956 13.9059C104.142 14.3801 103.513 15.0556 103.069 15.9277C102.624 16.8021 102.402 17.857 102.402 19.0923C102.402 20.2211 102.608 21.239 103.025 22.1435C103.439 23.048 104.075 23.7628 104.935 24.2902C105.794 24.8177 106.886 25.0814 108.213 25.0814C109.042 25.0814 109.807 24.9842 110.508 24.7876C111.209 24.591 111.762 24.3365 112.169 24.0196V22.1435C111.732 22.4442 111.228 22.6825 110.654 22.856C110.08 23.0295 109.472 23.1151 108.824 23.1151C107.529 23.1151 106.566 22.7542 105.942 22.0301C105.393 21.3963 105.086 20.8295 105.019 19.6868H112.306C112.319 19.4901 112.331 18.972 112.34 18.7753C112.347 18.5787 112.352 18.3844 112.352 18.1878C112.352 17.0288 112.16 16.078 111.776 15.3401C111.385 14.6022 110.851 14.0608 110.166 13.7139ZM109.921 17.894H105.056C105.153 17.0681 105.382 16.4065 105.747 15.9161C106.245 15.2452 106.923 14.9098 107.781 14.9098C108.322 14.9098 108.748 15.0371 109.058 15.2938C109.365 15.5506 109.59 15.8814 109.724 16.2885C109.86 16.6957 109.928 17.1398 109.928 17.621C109.928 17.7135 109.925 17.8038 109.921 17.894Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M121.648 13.2396C121.414 13.2095 121.206 13.1934 121.025 13.1934C120.421 13.1934 119.885 13.3437 119.408 13.6444C118.934 13.9452 118.527 14.3454 118.187 14.8427C118.004 15.1088 117.835 15.3887 117.678 15.6801V13.4201H115.168V24.857H117.678V18.2942C117.833 18.0119 117.997 17.7459 118.175 17.4984C118.522 17.0172 118.925 16.6355 119.385 16.3579C119.845 16.0803 120.361 15.9392 120.933 15.9392C121.173 15.9392 121.393 15.9554 121.587 15.9855C121.784 16.0156 121.978 16.0618 122.175 16.122L122.332 13.4224C122.11 13.3298 121.881 13.2697 121.648 13.2396Z'
+                      fill='white'
+                    />
+                    <path
+                      d='M26.0553 8.52977L14.0516 13.7509V25.0768L2.55685 30.9155C1.82585 31.2394 1 30.7027 1 29.9023L1.06709 8.3262L16.8669 1L26.1595 7.4911C26.5411 7.75944 26.4833 8.34239 26.0553 8.52977Z'
+                      stroke='white'
+                      strokeWidth='2'
+                      strokeMiterlimit='10'
+                      strokeLinejoin='round'
+                    />
+                    <path
+                      d='M30.6645 18.153L23.0607 32.9997L14.0527 29.5206V25.0744L29.5611 16.9733C30.3013 16.6471 31.0416 17.4359 30.6645 18.153Z'
+                      stroke='white'
+                      strokeWidth='2'
+                      strokeMiterlimit='10'
+                      strokeLinejoin='round'
+                    />
                   </svg>
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-slate-100 text-custom-wezly-primary"
-                            : "text-white hover:bg-slate-100 hover:text-custom-wezly-primary",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* project dropdown */}
-                <Menu as="div" className="relative ">
-                  <div>
-                    <Menu.Button className="relative flex  text-white w-20 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <button
-                        type="button"
-                        className="flex w-full items-center justify-center rounded-md border border-transparent hover:border-slate-100 bg-white py-2 text-base font-medium text-custom-wezly-primary hover:text-white hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                      >
-                        <span className="">New </span>
-                        <PlusIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {projectItems.map((item, idx) => {
-                        return (
-                          <Menu.Item key={idx}>
-                            {({ active }) => (
-                              <div
-                                className={classNames(
-                                  active
-                                    ? "bg-custom-wezly-primary text-white rounded"
-                                    : "",
-                                  "flex items-center gap-x-1 px-4 py-2   text-custom-wezly-primary hover:text-white  text-sm font-medium "
-                                )}
-                              >
-                                {item.icon}
-                                <Link href={item.href}>{item.lable}</Link>
-                              </div>
-                            )}
-                          </Menu.Item>
-                        );
-                      })}
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-                <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="relative flex  text-white w-40 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <div className="flex gap-3">
-                        <GiPlagueDoctorProfile className="invisible md:visible" />
-                        {"Mohamed arafa"}
-                        <ChevronDownIcon
-                          className="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
-                          aria-hidden="true"
-                        />
-                      </div>
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {profileItems.map((item, idx) => {
-                        return (
-                          <Menu.Item key={idx}>
-                            {({ active }) => (
-                              <div
-                                className={classNames(
-                                  active
-                                    ? "bg-custom-wezly-primary text-white rounded"
-                                    : "",
-                                  "flex items-center gap-x-1 px-4 py-2   text-custom-wezly-primary hover:text-white  text-sm font-medium "
-                                )}
-                              >
-                                {item.icon}
-                                <Link href={item.href}>{item.lable}</Link>
-                              </div>
-                            )}
-                          </Menu.Item>
-                        );
-                      })}
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
               </div>
             </div>
           </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "border border-slate-100 text-white"
-                      : "text-white hover:border-b border-slate-100 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
         </>
       )}
     </Disclosure>

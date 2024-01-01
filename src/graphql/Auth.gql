@@ -1,24 +1,9 @@
-query CheckMe  {
+query CheckMe {
   me {
-    success
-    message
-  }
-}
-
-mutation Regularlogin($input: EmailAndPasswordLoginInput!) {
-  emailAndPasswordLogin(input: $input) {
-    data {
-      token
+    id
+    identifier
+    channels {
+      id
     }
-    success
-    message
-  }
-}
-
-mutation Register($input: RegisterInput!) {
-  registerAs(input: $input) {
-    data
-    success
-    message
   }
 }

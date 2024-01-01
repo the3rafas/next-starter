@@ -1,23 +1,15 @@
-import HomeNavBar from "@/component/home-navbar";
-import SearchInput from "@/component/search-input";
-import Loading from "@/component/ui/loading";
-import Image from "next/image";
-import { Suspense } from "react";
-import "react-toastify/dist/ReactToastify.css";
-import ProjectsComponent from "./component/projects";
+import HomeNavBar from '@/component/home-navbar';
+import Loading from '@/component/ui/loading';
+import Image from 'next/image';
+import { Suspense } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Home() {
   return (
     <>
       <HomeNavBar />
-      <section className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8  mt-9">
-        <h1 className="text-2xl font-bold text-gray-700 py-5">Overview</h1>
-        <SearchInput />
-      </section>
 
-      <section className="container m-auto mt-9">
-        <Suspense fallback={<Loading />}>
-          <ProjectsComponent />
-        </Suspense>
+      <section className='container m-auto mt-9'>
+        <Suspense fallback={<Loading />}></Suspense>
       </section>
     </>
   );

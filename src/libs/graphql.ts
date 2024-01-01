@@ -1,7 +1,7 @@
-import { invariant } from "ts-invariant";
-import { type TypedDocumentString } from "../gql/graphql";
+import { invariant } from 'ts-invariant';
+import { type TypedDocumentString } from '../gql/graphql';
 
-invariant(process.env.GQL_API_URL, "Missing GQL_API_URL env variable");
+invariant(process.env.GQL_API_URL, 'Missing GQL_API_URL env variable');
 
 type GraphQLErrorResponse = {
   errors: readonly {
@@ -13,27 +13,25 @@ type GraphQLRespone<T> = { data: T } | GraphQLErrorResponse;
 
 export const ProductsPerPage = 12;
 
-export async function executeGraphQL  <Result, Variables>(
+export async function executeGraphQL<Result, Variables>(
   operation: TypedDocumentString<Result, Variables>,
   options: {
     headers?: HeadersInit;
     cache?: RequestCache;
     revalidate?: number;
-  } & (Variables extends Record<string, never>
-    ? { variables?: never }
-    : { variables: Variables })
+  } & (Variables extends Record<string, never> ? { variables?: never } : { variables: Variables })
 ): Promise<Result> {
-  invariant(process.env.GQL_API_URL, "Missing GQL_API_URL env variable");
+  invariant(process.env.GQL_API_URL, 'Missing GQL_API_URL env variable');
   const { variables, headers, cache, revalidate } = options;
-  const authToken =
-    typeof window !== "undefined" &&
-    (localStorage.getItem("accessToken") ?? localStorage.getItem("token"));
-  const lang = typeof window !== "undefined" && localStorage.getItem("lang");
+  const authToken = typeof window !== 'undefined' && (localStorage.getItem('accessToken') ?? localStorage.getItem('token'));
+  const lang = typeof window !== 'undefined' && localStorage.getItem('lang');
+  console.log(process.env.GQL_API_URL);
+
   const response = await fetch(process.env.GQL_API_URL, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
-      ...(authToken && { Authorization: "Bearer " + authToken }),
+      'Content-Type': 'application/json',
+      ...(authToken && { Authorization: 'Bearer ' + authToken }),
       ...(lang && { lang: lang }),
       ...headers,
     },
@@ -47,7 +45,7 @@ export async function executeGraphQL  <Result, Variables>(
 
   const body = (await response.json()) as GraphQLRespone<Result>;
 
-  if ("errors" in body) {
+  if ('errors' in body) {
     throw new GraphQLError(body);
   }
 
@@ -56,9 +54,7 @@ export async function executeGraphQL  <Result, Variables>(
 
 export class GraphQLError extends Error {
   constructor(public errorResponse: GraphQLErrorResponse) {
-    const message = errorResponse.errors
-      .map((error) => error.message)
-      .join("\n");
+    const message = errorResponse.errors.map((error) => error.message).join('\n');
     super(message);
     this.name = this.constructor.name;
     Object.setPrototypeOf(this, new.target.prototype);
@@ -66,8 +62,8 @@ export class GraphQLError extends Error {
 }
 
 export const formatMoney = (amount: number, currency: string) =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
     currency,
   }).format(amount);
 
