@@ -9,55 +9,7 @@ import { IoSettingsOutline } from 'react-icons/io5';
 import { CiLogout } from 'react-icons/ci';
 import { CgProfile } from 'react-icons/cg';
 
-const navigation = [
-  { name: 'Dashboard', href: '/', current: true },
-  { name: 'Tutorials', href: '/tutorial', current: false },
-  { name: 'Global integration ', href: '/global-integration', current: false },
-  { name: 'Help', href: '/help', current: false },
-];
-const profileItems = [
-  {
-    lable: 'Your Profile',
-    href: '',
-    icon: <CgProfile className='h-5 w-5 ' aria-hidden='true' />,
-  },
-  {
-    lable: 'Settings',
-    href: '',
-    icon: <IoSettingsOutline className='h-5 w-5' aria-hidden='true' />,
-  },
-  {
-    lable: 'Sign out',
-    href: '',
-    icon: <CiLogout className='h-5 w-5' aria-hidden='true' />,
-  },
-];
 
-const projectItems = [
-  {
-    lable: 'Static site',
-    icon: <FolderIcon className='h-5 w-5' aria-hidden='true' />,
-    href: '',
-  },
-  {
-    lable: 'Web service',
-    href: '',
-    icon: <CloudIcon className='h-5 w-5' aria-hidden='true' />,
-  },
-  {
-    lable: 'Native service',
-    href: '',
-    icon: <DevicePhoneMobileIcon className='h-5 w-5' aria-hidden='true' />,
-  },
-  {
-    lable: 'Maniaka nashfaa',
-    href: '',
-    icon: <KeyIcon className='h-5 w-5' aria-hidden='true' />,
-  },
-];
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function HomeNavBar() {
   return (

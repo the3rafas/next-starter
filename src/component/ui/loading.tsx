@@ -9,7 +9,6 @@ export default function Loading() {
       <span className='relative flex h-14 w-14  opacity-75'>
         <span className='animate-bounce absolute inline-flex h-full w-full rounded-full  opacity-75'>
           <div className='flex flex-shrink-0 items-center'>
-            <Image src='/Logo 1.png' width={500} height={500} alt='Picture of the author' />
           </div>
         </span>
       </span>

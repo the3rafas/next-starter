@@ -1,0 +1,10 @@
+{
+  "Index": {
+    "title": "مرحباااا"
+  },
+  "LocaleSwitcher": {
+    "label": "تغيير اللغة",
+    "locale": "{locale, select, ar {العربية} en {الإنجليزية} other {}}"
+
+  }
+}
